@@ -1,0 +1,71 @@
+/*
+ * Basic CSS Grid layout for site
+ * Author: Maitiú Ellis
+ */
+
+:root{
+    --gap: 16px;
+    --header-height: 60px;
+}
+
+html,body{
+    height:100%;
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+.site-header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--gap);
+    padding: 0 16px;
+    height: var(--header-height);
+    background: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+}
+
+.site-nav ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap: 12px;
+    align-items:center;
+}
+
+.site-nav a{
+    text-decoration:none;
+    color:#333;
+}
+
+.auth-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.auth-area .status{
+    font-size:0.95rem;
+    color:#555;
+}
+
+.auth-area .auth-link{
+    text-decoration:none;
+    padding:6px 10px;
+    background:#007bff;
+    color:#fff;
+    border-radius:4px;
+    font-size:0.9rem;
+}
+
+main{
+    padding:24px;
+}
+
+footer{
+    padding:16px;
+    text-align:center;
+    border-top:1px solid #eee;
+    background:#fafafa;
+}
