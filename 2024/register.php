@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 /**
  * Register Page
  * 
@@ -37,8 +34,41 @@ if (isRequestMethod('POST')) {
     $password = getPost('password');
     $confirmPassword = getPost('confirm_password');
     
-    // TODO: Add validation here
-    // TODO: Add user creation logic here
+    // Basic validation
+    if (empty($name) || empty($email) || empty($password)) {
+        setFlash('error', 'Please fill in all required fields.');
+        redirect('register.php');
+    }
+
+    if ($password !== $confirmPassword) {
+        setFlash('error', 'Passwords do not match.');
+        redirect('register.php');
+    }
+
+    // Ensure database tables exist
+    Database::initialize();
+
+    // Create user (password hashing)
+    $pdo = Database::getInstance();
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    try {
+        $stmt = $pdo->prepare('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
+        $stmt->execute([
+            ':name' => $name,
+            ':email' => $email,
+            ':password' => $hashed,
+        ]);
+        $userId = (int)$pdo->lastInsertId();
+
+        // Set session and redirect to dashboard
+        setUserSession($userId, ['name' => $name, 'email' => $email]);
+        setFlash('success', 'Registration successful. Welcome!');
+        redirect('dashboard.php');
+    } catch (PDOException $e) {
+        // Unique constraint on email
+        setFlash('error', 'Could not create account. Email may already be registered.');
+        redirect('register.php');
+    }
 }
 
 // Include header template

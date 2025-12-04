@@ -27,7 +27,6 @@ $pageTitle = 'Home - RZA';
 
 // Include header template
 require_once ROOT_DIR . '/templates/header.php';
-
 ?>
 
 <!-- Home Page Content -->
