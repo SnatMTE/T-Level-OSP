@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#2e7e5e"/><stop offset="1" stop-color="#6b4c3b"/></linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g fill="rgba(255,255,255,0.15)" transform="translate(80,60)">
+    <ellipse cx="320" cy="120" rx="220" ry="60"/>
+  </g>
+  <g transform="translate(80,70)" fill="#fff" opacity="0.15">
+    <g transform="translate(20,30)">
+      <circle cx="18" cy="18" r="18"/>
+    </g>
+    <g transform="translate(140,20)">
+      <rect x="0" y="0" width="80" height="40" rx="10"/>
+    </g>
+  </g>
+  <text x="80" y="140" font-size="42" fill="#fff" font-family="Verdana,Arial" font-weight="700">Welcome to Riget Zoo Adventures</text>
+</svg>

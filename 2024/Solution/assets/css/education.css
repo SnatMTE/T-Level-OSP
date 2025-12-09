@@ -1,0 +1,9 @@
+.edu-grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+.edu-card{background:#fff;border-radius:8px;padding:12px;border:1px solid #e6e6e6}
+.quiz-answers button.quiz-opt{display:block;margin:6px 0;padding:8px;width:100%}
+.quiz-end{display:none}
+.match-board{display:flex;gap:12px}
+.match-zone{flex:1;min-height:60px;border:2px dashed #eee;padding:8px}
+.match-item{display:inline-block;padding:8px;margin:6px;background:#f3f9f3;border-radius:6px;cursor:grab}
+.resources-list{list-style:none;padding:0}
+.resources-list li{margin-bottom:8px}

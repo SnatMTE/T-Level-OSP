@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#2e7e5e"/>
+  <g transform="translate(10,8)">
+    <circle cx="24" cy="20" r="18" fill="#6b4c3b" stroke="#8fbf84" stroke-width="3"/>
+    <text x="56" y="26" font-family="Verdana,Arial" font-size="18" font-weight="700" fill="#fff">Riget Zoo</text>
+  </g>
+</svg>
